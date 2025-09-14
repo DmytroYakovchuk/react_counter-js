@@ -16,9 +16,15 @@ export const App = () => {
 
   // DON'T change the code below
   const increase = () => {
-    if (count % 5 === 0) {
-      add100();
-    }
+    setConut(previousValue => {
+      const next = previousValue;
+
+      return count % 5 === 0 ? next + 100 : next;
+    });
+
+    // if (count % 5 === 0) {
+    //   add100();
+    // }
 
     addOne();
   };
